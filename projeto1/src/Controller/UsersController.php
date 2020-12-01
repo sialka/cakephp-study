@@ -59,7 +59,7 @@ class UsersController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->success(__('Erro: Usuário não foi cadastrado com sucesso'));
+                $this->Flash->error(__('Erro: Usuário não foi cadastrado com sucesso'));
             }
         }
         $this->set(compact('user'));
@@ -80,7 +80,7 @@ class UsersController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('Erro: Usuário não foi cadastrado com sucesso'));
+                $this->Flash->error(__('Erro: Usuário não foi editado com sucesso'));
             }
         }
 

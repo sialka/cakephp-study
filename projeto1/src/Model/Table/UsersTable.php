@@ -3,7 +3,7 @@
 namespace App\Model\Table;
 
 // use Cake\ORM\Query;
-// use Cake\ORM\RulesChecker;
+use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
@@ -39,5 +39,13 @@ class UsersTable extends Table
         ->notEmpty('password');
 
         return $validator;
+    }
+
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['email'], 'Este e-mail já esta cadastrado'));
+        $rules->add($rules->isUnique(['username'], 'Este usuario já esta cadastrado'));
+
+        return $rules;
     }
 }
