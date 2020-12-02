@@ -19,8 +19,8 @@
                     <?php
                         echo $this->Html->link(('Ver '), ['action' => 'view', $usuario->id]);
                         echo $this->Html->link((' Editar '), ['action' => 'edit', $usuario->id]);
-                    ?>    
-                    Apagar 
+                        echo $this->Form->postLink(('Apagar '), ['action' => 'delete', $usuario->id], ['confirm' => 'Realmente quer apagar o usuário?', $usuario->id]);
+                    ?>                        
                 </td>
             </tr>
             <?php endforeach; ?>
